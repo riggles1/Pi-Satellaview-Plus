@@ -6,7 +6,7 @@ It may also work with other Pi images that aren't CRT specific as long as they a
 What is Satellaview+?
 Satellaview+ is a revival project that aims to bring back the 1995 Japan only broadcasting service for the Super Famicom.
 The game and audio broadcasts are instead done through the internet rather than satellite. Bringing back old preserved content, recreating lost content that was recorded 
-and bringing in new content as well, all in English. 
+and bringing in new content as well, most of it in English. 
 
 There's a lot of plans for this revival like special events, join the Satellaview+ discord to keep up-to-date. https://satellaviewplus.github.io/
 
