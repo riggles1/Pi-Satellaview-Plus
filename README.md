@@ -10,4 +10,4 @@ and bringing in new content as well, all in English.
 
 There's a lot of plans for this revival like special events, join the Satellaview+ discord to keep up-to-date. https://satellaviewplus.github.io/
 
-Guide: https://github.com/riggles1/Pi-Satellaview-Plus/blob/main/Guide%20v1.txt
+Guide v1.txt and launch .sh scripts are provided above in this git.
