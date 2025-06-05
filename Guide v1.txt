@@ -3,6 +3,7 @@ Satellaview+ on Pi guide.
 Works full speed with lots of overhead on the Pi4 with working
 streamed Soundlink+ Audio.
 
+0. Before starting, make sure you have a recent version of Snes9x, with RGBPi-Extra you can update the core with the provided update script.
 
 1. Access the Pi terminal through Putty on Windows 
 (Using your Pi IP address, port 22 and logging in as user:root + password:(rgbpigod for this project))
@@ -150,12 +151,14 @@ If you want to end the Audio Stream:
 
 pkill mpv
 
-11:
+11: With the provided scripts you won't need to use Putty again. 
+Copy the "# StartSatellaview+.sh" and "# StopSatellaview+sh" scripts over to the "scripts" folder on the USB drive.
+To play, go to the scripts item in the Pi menu (scan for games if it's not there), run the Start .sh script.
 
-Copy the "# StartSatellaview+.sh" and "# StopSatellaview+sh" scripts over to the "script folder on the USB drive.
+Then go to the BS-X.sfc rom that's located in "roms/snes/bs-x/" just like loading any other SNES ROM.
 
-With the provided scripts you won't need to use Putty again, to play Satellaview+ simply launch the Start script.
 It will work as long as you have the Satellaview+ client and Syncthing running on a computer in your home-network.
 
+-------------------------------------------------------------------------------------------------------------------
 Be sure to check the SoundLink+ broadcasting schedule, as the addon audio isn't broadcasted every day.
 When there is a SoundLink+ broadcast happening then the SNES music is muted while SNES soundeffects are kept.
