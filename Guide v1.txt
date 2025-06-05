@@ -141,7 +141,7 @@ nohup mpv https://howlingf-gecko.radioca.st/stream --no-video &> /dev/null &
 
 The stream audio will play in the background at the same time as the SNES audio, both played on the Pi.
 If Syncthing is running on the Pi you can end it with "ctrl-c", do the audio command then run
-syncthing again.
+Syncthing again.
 
 To start Syncthing on the Pi:
 
@@ -164,4 +164,5 @@ If errors are encountered, delete the .bin files from the PC bs-x folder (exampp
 hit the "Download Again" button in the Satellaview+ PC Client.
 -------------------------------------------------------------------------------------------------------------------
 Be sure to check the SoundLink+ broadcasting schedule, as the addon audio isn't broadcasted every day.
-When there is a SoundLink+ broadcast happening then the SNES music is muted while SNES soundeffects are kept.
+When there is a SoundLink+ broadcast happening then the SNES music is often muted while SNES soundeffects are kept.
+(not all games are made to do this yet as it's a work in progress)
