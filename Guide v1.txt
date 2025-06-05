@@ -159,10 +159,15 @@ Then go to the BS-X.sfc rom that's located in "roms/snes/bs-x/" just like loadin
 
 It will work as long as you have the Satellaview+ client and Syncthing running on a computer in your home-network.
 
+To adjust the volume of the game (not the SoundLink+ stream), access the RetroArch quick menu then
+"back to main menu>settings>audio>volume gain" and set it to a lower or higher value in order to adjust the balance.
 
 If errors are encountered, delete the .bin files from the PC bs-x folder (exampple "C:\satplus\roms\snes\bs-x") then
 hit the "Download Again" button in the Satellaview+ PC Client.
 -------------------------------------------------------------------------------------------------------------------
 Be sure to check the SoundLink+ broadcasting schedule, as the addon audio isn't broadcasted every day.
 When there is a SoundLink+ broadcast happening then the SNES music can sometimes be muted while soundeffects are kept.
-(not all games are made to do this, as it's a work in progress feature)
+(not all games are made to do this, usually it's the game in the main broadcast station, this is a work in progress 
+feature and more sfx only games will be available over time)
+
+
