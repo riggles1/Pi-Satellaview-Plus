@@ -93,7 +93,7 @@ This will open a browser page where you can configure it.
 - Click "Add Folder"
 - Give it a "Folder Label" (for example BSX)
 - Give it a "Folder Path", if you followed the example then this would be "C:\satplus\roms\snes\bs-x"
-- In the Avanced tab, set the folder type to "send only"
+- In the Avanced tab, set the folder type to "Send & Receive"
 - In the Avanced tab, set rescan interval to 1 second, to make it continually sync Satellaview+ data to the Pi
 - Save, "BSX" will show up and it'll blink "Up to Date" as it keeps checking the files
 - Add your Pi (make sure it's running Syncthing) as a remote device
@@ -108,7 +108,7 @@ Accept the shared devices and make the path to this for the pi
 (accept the device requests both for Syncthing PC and Syncthing Pi)
 
 The Pi Syncthing will now also have the BSX folder, shared with PC.
-Make sure it's set set to "recieve only" and has a rescan interval of 1s in the Advanced Tab.
+Make sure it's set set to "Send & Receive" and has a rescan interval of 1s in the Advanced Tab.
 
 Set the path for the Pi to: "/media/usb1/roms/snes/bs-x"
 (makes the satellaview data download to the USB1 drive)
