@@ -164,5 +164,5 @@ If errors are encountered, delete the .bin files from the PC bs-x folder (exampp
 hit the "Download Again" button in the Satellaview+ PC Client.
 -------------------------------------------------------------------------------------------------------------------
 Be sure to check the SoundLink+ broadcasting schedule, as the addon audio isn't broadcasted every day.
-When there is a SoundLink+ broadcast happening then the SNES music is often muted while SNES soundeffects are kept.
-(not all games are made to do this yet as it's a work in progress)
+When there is a SoundLink+ broadcast happening then the SNES music can sometimes be muted while soundeffects are kept.
+(not all games are made to do this, as it's a work in progress feature)
