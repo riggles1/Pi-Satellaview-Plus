@@ -159,6 +159,9 @@ Then go to the BS-X.sfc rom that's located in "roms/snes/bs-x/" just like loadin
 
 It will work as long as you have the Satellaview+ client and Syncthing running on a computer in your home-network.
 
+
+If errors are encountered, delete the .bin files from the PC bs-x folder (exampple "C:\satplus\roms\snes\bs-x") then
+hit the "Download Again" button in the Satellaview+ PC Client.
 -------------------------------------------------------------------------------------------------------------------
 Be sure to check the SoundLink+ broadcasting schedule, as the addon audio isn't broadcasted every day.
 When there is a SoundLink+ broadcast happening then the SNES music is muted while SNES soundeffects are kept.
