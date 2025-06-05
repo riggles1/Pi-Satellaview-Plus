@@ -12,4 +12,5 @@ There's a lot of plans for this revival like special events, join the Satellavie
 
 Guide v1.txt and launch .sh scripts are provided above in this git.
 
-https://www.youtube.com/watch?v=FeAi23YMnso
+
+[https://www.youtube.com/watch?v=FeAi23YMnso](https://www.youtube.com/watch?v=FeAi23YMnso)
