@@ -11,3 +11,5 @@ and bringing in new content as well, most of it in English.
 There's a lot of plans for this revival like special events, join the Satellaview+ discord to keep up-to-date. https://satellaviewplus.github.io/
 
 Guide v1.txt and launch .sh scripts are provided above in this git.
+
+https://www.youtube.com/watch?v=FeAi23YMnso
