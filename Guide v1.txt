@@ -1,0 +1,161 @@
+Satellaview+ on Pi guide. 
+
+Works full speed with lots of overhead on the Pi4 with working
+streamed Soundlink+ Audio.
+
+
+1. Access the Pi terminal through Putty on Windows 
+(Using your Pi IP address, port 22 and logging in as user:root + password:(rgbpigod for this project))
+
+2. To allow traffic on port 8384 through the Raspberry Pi's firewall (UFW), you'll need to use 
+the UFW allow command in the terminal. First, ensure UFW is installed and enabled. 
+Then, use the ufw allow 8384/tcp command to allow incoming connections on that port. 
+
+Run these commands in the terminal (Putty is a great way to access it on a PC),
+do them in order and let each command finish, the update can take some time.
+
+sudo apt-get update
+sudo apt install ufw
+sudo ufw enable
+sudo ufw allow 8384/tcp
+
+(optional:
+sudo ufw status)
+
+3. Install the audio stream player:
+sudo apt install mpv -y
+
+4. Download and install Syncthing for Windows (open-source home-network file syncing program)
+https://syncthing.net/downloads/
+Make sure it's allowed in your firewall.
+
+5. Install Syncthing on the Pi:
+sudo apt install syncthing -y
+
+Then edit the config for syncthing in the terminal with this line:
+nano ~/.config/syncthing/config.xml
+
+
+Look for a section like this:
+<gui>
+	<address>127.0.0.1:8384</address>
+
+Change it to all 0's before the 8384 part:
+<gui>
+	<address>0.0.0.0:8384</address>
+	
+hit shift+O to write out the changes to the config file.
+
+
+6. Download and setup the Satellaview+ client on Windows:
+https://satellaviewplus.github.io/connect.htm
+
+Launch satellaview+ (v4 at the time of writing) and hit the "edit config" button.
+Select "RetroArch" and give it an adress to the location, it can be whatever you want
+as long as it has the following folder structure roms>snes>bs-x
+
+For example create folders to have the following path on your PC 
+"C:\satplus\roms\snes\bs-x"
+
+Then in the edit config select "satplus" as your emulator folder.
+Restart the client after making this change.
+
+Satellaview+ data will then end up in the bs-x folder. It'll say "downloading SatData and tell if the
+satellaview+ data is up to date. Make sure the bs-x folder contains the "BS-X.sfc" rom, which should be the 
+english translated Satellaview "BS-X town" interface.
+
+As long as the Satellaview+ client is running, it will continue to get satellaview data and update
+game content on the fly. Be sure to check the "Broadcast Schedule" and the "Soundlink+ Schedule" to see
+when live streamed Satellaview audio content is available.
+
+The client need to be running on your PC for Satellaview+ to work live on the Pi.
+Optional:
+Set the pi time the same time as the Satellaview+ Server (time shown in the Satellaview+ Windows Client):
+ sudo raspi-config
+
+7. Start Syncthing on the Pi through terminal (Putty) with the following line:
+
+syncthing
+
+(If you want to stop Syncthing, hit ctrl+c in the Putty terminal to stop it from running)
+
+Make sure Syncthing is running on the Pi for the next steps.
+
+8. Start Syncthing on the Windows PC 
+- Start menu>Start Syncthing
+- Start menu>Syncthing Configuration Page
+
+This will open a browser page where you can configure it.
+
+- Set user and password to: root and whatever you want as the password
+- Delete default shared folder
+- Click "Add Folder"
+- Give it a "Folder Label" (for example BSX)
+- Give it a "Folder Path", if you followed the example then this would be "C:\satplus\roms\snes\bs-x"
+- In the Avanced tab, set the folder type to "send only"
+- In the Avanced tab, set rescan interval to 1 second, to make it continually sync Satellaview+ data to the Pi
+- Save, "BSX" will show up and it'll blink "Up to Date" as it keeps checking the files
+- Add your Pi (make sure it's running Syncthing) as a remote device
+(the device ID for the Pi is written out in the Putty terminal)
+- Give it a device name, "Pi" and save
+
+9: Then in a separate brower tab, go to the Pi's Syncthing configuration page.
+Use the following address to access it, replace "192.168.1.163" with the IP for your Pi. 
+http://192.168.1.163:8384
+
+Accept the shared devices and make the path to this for the pi
+(accept the device requests both for Syncthing PC and Syncthing Pi)
+
+The Pi Syncthing will now also have the BSX folder, shared with PC.
+Make sure it's set set to "recieve only" and has a rescan interval of 1s in the Advanced Tab.
+
+Set the path for the Pi to: "/media/usb1/roms/snes/bs-x"
+(makes the satellaview data download to the USB1 drive)
+
+Make sure the folder ID to the same as the Windows folder ID
+In the share tab, check the box for "DESKTOP-XXXXXXX" to make it share with windows
+
+Now the satellaview+ client data downloads will be passed over to the Pi as the bs-x folders are
+synced up through your network. 
+Snes9x (updated to the latest core with RGBPi-Extra) will  
+
+
+10: To manually (Putty terminal) start playing Satellaview+ with Soundlink+ audio on the pi.
+An automatic Pi launcher script will be available soon. But for now manually do it in Putty.
+
+PC: 
+- Start Syncthing
+- Start the Satellaview+ client
+(give it a moment for it to download the client data)
+
+Pi:
+- Go to your SNES roms (Scan for games first on RGBPi, 
+only needed the first time doing this to make the bs-x folder to show)
+- Go to the new "bs-x" folder and launch the "BS-X.sfc" rom that should be there.
+This will start the Satellaview BS-X BIOS with snes9x as the core.
+
+- If there's Soundlink+, then start the audio stream with the following command in terminal:
+
+nohup mpv https://howlingf-gecko.radioca.st/stream --no-video &> /dev/null &
+
+The stream audio will play in the background at the same time as the SNES audio, both played on the Pi.
+If Syncthing is running on the Pi you can end it with "ctrl-c", do the audio command then run
+syncthing again.
+
+To start Syncthing on the Pi:
+
+syncthing
+
+If you want to end the Audio Stream:
+
+pkill mpv
+
+11:
+
+Copy the "# StartSatellaview+.sh" and "# StopSatellaview+sh" scripts over to the "script folder on the USB drive.
+
+With the provided scripts you won't need to use Putty again, to play Satellaview+ simply launch the Start script.
+It will work as long as you have the Satellaview+ client and Syncthing running on a computer in your home-network.
+
+Be sure to check the SoundLink+ broadcasting schedule, as the addon audio isn't broadcasted every day.
+When there is a SoundLink+ broadcast happening then the SNES music is muted while SNES soundeffects are kept.
