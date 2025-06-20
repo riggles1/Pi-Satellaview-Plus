@@ -52,7 +52,7 @@ hit shift+O to write out the changes to the config file.
 https://satellaviewplus.github.io/connect.htm
 
 Launch satellaview+ (v4 at the time of writing) and hit the "edit config" button.
-Select "RetroArch" and give it an adress to the location, it can be whatever you want
+Select "RetroArch" and give it an address to the location, it can be whatever you want
 as long as it has the following folder structure roms>snes>bs-x
 
 For example create folders to have the following path on your PC 
