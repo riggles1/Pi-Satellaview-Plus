@@ -154,6 +154,7 @@ pkill mpv
 11: With the provided scripts you won't need to use Putty again. 
 Copy the "# StartSatellaview+.sh" and "# StopSatellaview+sh" scripts over to the "scripts" folder on the USB drive.
 To play, go to the scripts item in the Pi menu (scan for games if it's not there), run the Start .sh script.
+If Soundlink+ is scheduled and streaming, you'll begin hearing the stream. 
 
 Then go to the BS-X.sfc rom that's located in "roms/snes/bs-x/" just like loading any other SNES ROM.
 
